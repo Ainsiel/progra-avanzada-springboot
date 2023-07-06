@@ -33,4 +33,11 @@ public class SaleDetails {
 
     @Column(name = "date_time",nullable = false)
     private LocalDateTime dateTime;
+
+    public SaleDetails(Book book, int quantity, Client client) {
+        this.book = book;
+        this.quantity = quantity;
+        this.client = client;
+        this.dateTime = LocalDateTime.now();
+    }
 }

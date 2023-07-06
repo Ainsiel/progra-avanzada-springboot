@@ -31,4 +31,12 @@ public class Book {
 
     @Column(name = "price", nullable = false)
     private int price;
+
+    public Book(String title, String authors, String isbn, int stock, int price) {
+        this.title = title;
+        this.authors = authors;
+        this.isbn = isbn;
+        this.stock = stock;
+        this.price = price;
+    }
 }

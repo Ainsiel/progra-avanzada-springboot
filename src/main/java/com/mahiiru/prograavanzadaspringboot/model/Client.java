@@ -23,4 +23,9 @@ public class Client {
 
     @Column(name = "email", nullable = false, unique = true, length = 50)
     private String email;
+
+    public Client(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
 }
