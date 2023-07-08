@@ -18,7 +18,7 @@ public class SaleDetailsController {
     private SaleDetailsService service;
 
     @GetMapping
-    public ResponseEntity<List<SaleDetails>> getAllClients(){
+    public ResponseEntity<List<SaleDetails>> getAllSalesDetails(){
         return ResponseEntity.ok(service.getAllSaleDetails());
     }
 
