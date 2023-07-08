@@ -27,14 +27,9 @@ public class ClientService {
         repository.save(c);
     }
 
-    public Optional<Client> saveAndGetClient(String name, String email){
-        Client c = createClient(name,email);
+    public Optional<Client> saveAndGetClient(Client c){
         saveClient(c);
         return getClientByEmail(c.getEmail());
-    }
-
-    private Client createClient(String name, String email){
-        return new Client(name,email);
     }
 
     private Optional<Client> getClientByEmail(String email) {

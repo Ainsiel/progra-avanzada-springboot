@@ -28,14 +28,14 @@ public class BookService {
 
     public Optional<Book> saveAndGetBook(Book b){
         saveBook(b);
-        return getBookByISBN(b.getIsbn());
+        return getBookByIsbn(b.getIsbn());
     }
 
-    private Optional<Book> getBookByISBN(String isbn) {
+    private Optional<Book> getBookByIsbn(String isbn) {
         return Optional.ofNullable(repository.findByIsbn(isbn));
     }
 
-    public Optional<Book> reduceBookStockByID(Long id, int quantity){
+    public void reduceBookStockByID(Long id, int quantity){
         Optional<Book> book = getBookByID(id);
         book.ifPresent( b ->
                 {
@@ -43,6 +43,5 @@ public class BookService {
                     saveBook(b);
                 }
         );
-        return getBookByID(id);
     }
 }
